@@ -1,17 +1,3 @@
----
-title: "README"
-author: "jmp"
-
-## run_analysis summary
-
-The script "run_analysis.r" downloads data on Samsung wearables, then cleans that data to provide:
-a. A tidy dataset containing means and standard deviations for all variable obervations, saved to "clean_data.csv"
-b. A tidy dataset containing the average value for each variable for each subject and activity, saved to "clean_avs.csv"
-
-## Code explantion
-
-Below is an explanation of the code the script runs:
-
 #Load required packages
 library(tidyverse)
 library(downloader)
@@ -68,3 +54,6 @@ avs<- dat %>% group_by(subject,activity) %>% summarize_all(mean)
 #Save data
 write.csv("dat","clean_data.csv")
 write.csv("avs","clean_avs.csv")
+
+
+
